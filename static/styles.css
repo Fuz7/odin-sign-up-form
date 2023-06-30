@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "Norse Bold";
+    src: url("Norse-Bold.otf");
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+}
+
+
+section{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section::before{
+    position: absolute;
+    content: '';
+    display: flex;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.title{
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 7rem;
+    font-family: "Norse Bold";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    padding-right: 80px;
+}
+
+.title > img{
+    height: 112px;
+    width: 120px;
+}
+
+main{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+}
+
+main div:first-child{
+    height: 320px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+main div:nth-child(2){
+    height: 480px;
+    background-color: rgb(128, 128, 128);
+}
+
+main div:nth-child(3){
+    flex-grow: 1;
+    background-color: rgb(255, 38, 0);
+}
