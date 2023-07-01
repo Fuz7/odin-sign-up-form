@@ -16,23 +16,72 @@
         </div>
     </section>
     <main>
-        <div>
+        <div class="firstCol">
+            <div>
+                <p>
+                    This is not a real online service! You know you need something
+                    like this in your life to help you realize your deepest dreams.
+                    Sign up <i>now</i> to get Started.
+                </p>
+                <p>
+                    You <i>know</i> you want to.
+                </p>
 
-            <p>
-                This is not a real online service! You know you need something
-                like this in your life to help you realize your deepest dreams.
-                Sign up <i>now</i> to get Started.
-            </p>
-            <p>
-                You <i>know</i> you want to.
-            </p>
+            </div>
 
         </div>
-        <div>
+        <div class="secondCol">
+            <form>
+                <div class="formDisplay">
+                    <h3>Sign Up!</h3>
+                    <div class="formContainer">
+                        <div>
+                            <label for="firstName">FIRST NAME<span>*</span></label>
+                            <input id="firstName" type="text" class="textInput" placeholder=" " required> 
+                            <span></span>
+                        </div>
 
+                        <div>
+                            <label for="lastName">LAST NAME<span>*</span></label>
+                            <input id="lastName" type="text" class="textInput" required> 
+                            <span></span>
+                        </div>
+
+                        <div>
+                            <label for="email">EMAIL <span>*</span></label>
+                            <input id="email" type="email" class="textInput" placeholder="you@email.com" required>
+                            <span></span>
+                        </div>
+
+                        <div>
+                            <label for="phoneNumber">PHONE NUMBER<span></span></label>
+                            <input id="phoneNumber" type="tel" class="textInput" placeholder="0000-0000-000" pattern="[0-9]{4}-[0-9]{4}-[0-9]{3}">
+                            <span></span>
+                        </div>
+                        
+                        <div>
+                            
+                                <label for="password">PASSWORD <span>*</span></label>
+                                <input id="password" type="password" class="textInput"  required>
+                                <span></span>
+
+                        </div>
+                    
+                        <div>
+
+                            <label for="confirmPassword">CONFIRM PASSWORD <span>*</span></label>
+                            <input id="confirmPassword" type="password" class="textInput"  required>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
         </div>
-        <div>
-
+        <div class="thirdCol">
+     
         </div>
     </main>
 </body>
