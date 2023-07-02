@@ -91,6 +91,17 @@ main .secondCol{
     width: 60vw;
 }
 
+
+.secondCol.valid{
+    box-shadow: inset 0px 5px 20px green;
+}
+
+.thirdCol.valid{
+    box-shadow:  0px -10px 20px 0px green;
+}
+
+
+
 main .thirdCol{
     flex: 1;
     background-color: rgba(0, 0, 0, 0.9);
@@ -123,7 +134,7 @@ main div:nth-child(2) > form > div > h3{
     display: flex;
     flex-direction: column;
     margin-left: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 label[for]{
@@ -136,7 +147,8 @@ label > span {
     color: red;
 }
 
-.textInput{
+.textInput,
+.confPassInput{
     border-radius: 4px;
     width: 24vw;
     height: 30px;
@@ -147,17 +159,20 @@ label > span {
     padding-left: 30px;
 }
 
-.textInput:focus{
+.textInput:focus,
+.confPassInput:focus{
     outline: none;
     border-color: dodgerblue;
 }
 
-.textInput+span{
+.textInput+span,
+.confPassInput+span{
     position: relative;
 }
 
 .textInput:required+span::after,
-.textInput[type="tel"]+span::after{
+.textInput[type="tel"]+span::after,
+.confPassInput+span::after{
     content: url(checkmark.svg);
     position: absolute;
     top:-24px;
@@ -165,13 +180,41 @@ label > span {
     opacity: 0;
 }
 
-.textInput:valid:not(:placeholder-shown)+span::after{
+
+#password:invalid:not(:placeholder-shown) ~ div,
+.confPassInput.error:not(:placeholder-shown) ~ div{
+    color: red;
+    font-size: 1rem;
+}
+
+#password:invalid:not(:placeholder-shown) + span::after,
+.textInput:invalid:not(:placeholder-shown) + span::after,
+.confPassInput.error:not(:placeholder-shown) + span::after{
+    content: url(invalid-mark.svg);
+    opacity: 1;
+
+}
+
+#password ~ div,
+#password:valid ~ div,
+.confPassInput.valid ~ div,
+.confPassInput:placeholder-shown ~ div{
+    font-size: 0;   
+}
+
+.textInput:valid:not(:placeholder-shown)+span::after,
+.confPassInput.valid:not(:placeholder-shown) + span::after{
     opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
     .textInput::placeholder{
         font-size: 12px;
+    }
+
+    #password:invalid:not(:placeholder-shown) ~ div,
+    .confPassInput.error:not(:placeholder-shown) ~ div{
+        font-size: .7rem;
     }
 }
 
@@ -201,5 +244,9 @@ label > span {
 
 .thirdCol > button:hover{
     color: white;
+    background-color: red;
+}
+
+.thirdCol > button.valid:hover{
     background-color: green;
 }

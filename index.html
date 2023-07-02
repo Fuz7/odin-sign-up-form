@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="static/styles.css">
+    <script src="sign-up-form.js" defer></script>
 </head>
 <body>
     <section>  
@@ -31,7 +32,7 @@
 
         </div>
         <div class="secondCol">
-            <form>
+            <form id="form">
                 <div class="formDisplay">
                     <h3>Sign Up!</h3>
                     <div class="formContainer">
@@ -43,7 +44,7 @@
 
                         <div>
                             <label for="lastName">LAST NAME<span>*</span></label>
-                            <input id="lastName" type="text" class="textInput" required> 
+                            <input id="lastName" type="text" class="textInput" placeholder=" " required> 
                             <span></span>
                         </div>
 
@@ -62,16 +63,18 @@
                         <div>
                             
                                 <label for="password">PASSWORD <span>*</span></label>
-                                <input id="password" type="password" class="textInput"  required>
+                                <input id="password" type="password" class="textInput" placeholder=" " minlength=8 required>
                                 <span></span>
+                                <div>Password requires minimum 8 characters</div>
 
                         </div>
                     
                         <div>
 
                             <label for="confirmPassword">CONFIRM PASSWORD <span>*</span></label>
-                            <input id="confirmPassword" type="password" class="textInput"  required>
+                            <input id="confirmPassword" type="password" class="confPassInput" placeholder=" " minlength="8"  required>
                             <span></span>
+                            <div>Password do not match</div>
 
                         </div>
 
@@ -80,7 +83,7 @@
                 </div>
             </div>
         <div class="thirdCol">
-                <button type="submit">Create Account</button>
+                <button id="submitButton" type="submit">Create Account</button>
             </form>
             <div>
                 Already have an account? <a href>Log in</a>
